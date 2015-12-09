@@ -1,0 +1,32 @@
+@include keyframes(snow) {
+  0% {background-position: 0 0;}
+  100% {background-position: 500px 1000px, 400px 400px, 300px 300px;}
+}
+
+@include keyframes(ripple-anim){
+  from {
+    transform: translateY(-50%) translateX(-50%) scale(1);
+
+  }
+  to {
+    transform: translateY(-50%) translateX(-50%) scale(50);
+  }
+}
+.rippleEffect {
+  @include animation(ripple-anim 1s);
+  @include animation-fill-mode(forwards);
+}
+
+@include keyframes(fade-out) {
+  from {
+    opacity:1;
+  }
+  to {
+    opacity:0;
+  }
+}
+
+.fadeout {
+  @include animation(fade-out 1s);
+  @include animation-fill-mode(forwards);
+}
